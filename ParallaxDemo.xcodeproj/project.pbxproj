@@ -10,6 +10,7 @@
 		3C73EB8D1EF26FD400A24281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C73EB8C1EF26FD400A24281 /* AppDelegate.swift */; };
 		3C73EB941EF26FD400A24281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C73EB931EF26FD400A24281 /* Assets.xcassets */; };
 		3C73EB971EF26FD400A24281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C73EB951EF26FD400A24281 /* LaunchScreen.storyboard */; };
+		3C73EB9F1EF2720400A24281 /* DemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C73EB9E1EF2720400A24281 /* DemoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		3C73EB931EF26FD400A24281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C73EB961EF26FD400A24281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C73EB981EF26FD400A24281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C73EB9E1EF2720400A24281 /* DemoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoTableViewController.swift; path = Controller/DemoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +52,21 @@
 		3C73EB8B1EF26FD400A24281 /* ParallaxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3C73EBA01EF2728300A24281 /* Controller */,
 				3C73EB8C1EF26FD400A24281 /* AppDelegate.swift */,
 				3C73EB931EF26FD400A24281 /* Assets.xcassets */,
 				3C73EB951EF26FD400A24281 /* LaunchScreen.storyboard */,
 				3C73EB981EF26FD400A24281 /* Info.plist */,
 			);
 			path = ParallaxDemo;
+			sourceTree = "<group>";
+		};
+		3C73EBA01EF2728300A24281 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C73EB9E1EF2720400A24281 /* DemoTableViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C73EB9F1EF2720400A24281 /* DemoTableViewController.swift in Sources */,
 				3C73EB8D1EF26FD400A24281 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
