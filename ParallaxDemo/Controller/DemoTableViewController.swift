@@ -33,6 +33,8 @@ class DemoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         automaticallyAdjustsScrollViewInsets = false
 
         setUpTableView()
+        
+        setUpImageView()
     }
     
     func setUpTableView() {
@@ -56,6 +58,31 @@ class DemoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+    }
+    
+    func setUpImageView() {
+        
+        imageView.image = UIImage(named: "kaohsiung")
+        
+        imageView.contentMode = .scaleAspectFill
+        
+        imageView.clipsToBounds = true
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(imageView)
+        
+        imageViewTopConstraint = imageView.topAnchor.constraint(equalTo: view.topAnchor)
+        
+        imageViewTopConstraint?.isActive = true
+        
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        
+        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        imageViewHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageViewHeight)
+        
+        imageViewHeightConstraint?.isActive = true
     }
     
     // MARK: UITableView DataSource and Delegate
