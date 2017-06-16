@@ -109,4 +109,53 @@ class DemoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return 80
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (scrollView.contentOffset.y > -imageViewHeight) && (scrollView.contentOffset.y < 20) {
+            
+            changeImageViewTopConstraint(contentOffset: scrollView.contentOffset)
+            
+        } else if scrollView.contentOffset.y <= -imageViewHeight {
+            
+            changeImageViewHeightConstraint(contentOffset: scrollView.contentOffset)
+        }
+    }
+    
+    func changeImageViewTopConstraint(contentOffset: CGPoint) {
+        
+        imageViewTopConstraint?.isActive = false
+        
+        imageViewHeightConstraint?.isActive = false
+        
+        imageViewTopConstraint = imageView.topAnchor.constraint(
+            equalTo: view.topAnchor,
+            constant: -(contentOffset.y - (-imageViewHeight))
+        )
+        
+        imageViewHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageViewHeight)
+        
+        imageViewTopConstraint?.isActive = true
+        
+        imageViewHeightConstraint?.isActive = true
+        
+        view.layoutIfNeeded()
+    }
+    
+    func changeImageViewHeightConstraint(contentOffset: CGPoint) {
+        
+        imageViewTopConstraint?.isActive = false
+        
+        imageViewHeightConstraint?.isActive = false
+        
+        imageViewTopConstraint = imageView.topAnchor.constraint(equalTo: view.topAnchor)
+        
+        imageViewHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: -contentOffset.y)
+        
+        imageViewTopConstraint?.isActive = true
+        
+        imageViewHeightConstraint?.isActive = true
+        
+        view.layoutIfNeeded()
+    }
 }
