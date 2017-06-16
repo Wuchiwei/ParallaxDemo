@@ -10,6 +10,8 @@ import UIKit
 
 class DemoTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let imageViewHeight: CGFloat = 200.0
+    
     let tableView = UITableView()
     
     let imageView = UIImageView()
@@ -34,6 +36,10 @@ class DemoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func setUpTableView() {
+        
+        tableView.contentInset = UIEdgeInsets(top: imageViewHeight, left: 0, bottom: 0, right: 0)
+        
+        tableView.contentOffset = CGPoint(x: 0, y: -imageViewHeight)
         
         tableView.delegate = self
         
