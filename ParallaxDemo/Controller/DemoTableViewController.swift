@@ -9,8 +9,14 @@
 import UIKit
 
 class DemoTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     let tableView = UITableView()
+    
+    let imageView = UIImageView()
+    
+    var imageViewTopConstraint: NSLayoutConstraint?
+    
+    var imageViewHeightConstraint: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +29,21 @@ class DemoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         view.backgroundColor = UIColor.white
 
         automaticallyAdjustsScrollViewInsets = false
+
+        setUpTableView()
+    }
+    
+    func setUpTableView() {
         
         tableView.delegate = self
         
         tableView.dataSource = self
-
+        
         view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         
